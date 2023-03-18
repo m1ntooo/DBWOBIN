@@ -1,0 +1,11 @@
+#Death By Walking On Bedrock In Netherの略です。
+#ネザーの一定高度以上(岩盤があるとこ)にいると死にます。
+
+on join:
+	while player is online:
+		if player's world = "world_nether":
+			set {_Y} to player's y coordinate
+			if {_Y} > 121:
+				kill the player
+				send "&cネザーでは岩盤上にいけません！" to player
+		wait a second
